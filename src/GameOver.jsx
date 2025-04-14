@@ -1,9 +1,7 @@
-import Sound from "./assets/game-over.mp3";
+import MusicPlayer from "./utils/musicPlayer";
+
 export default function GameOver({ onRestart, winner, draw }) {
-  function play() {
-    new Audio(Sound).play();
-  }
-  play();
+  MusicPlayer.play(MusicPlayer.WIN_SOUND);
 
   return (
     // <div>

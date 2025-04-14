@@ -1,11 +1,7 @@
-import Sound from "./assets/click.mp3";
+import MusicPlayer from "./utils/musicPlayer";
 import React from "react";
 
 function Board({ gameTurns, onClick, winSquares }) {
-  function play() {
-    new Audio(Sound).play();
-  }
-
   const boards = [
     [null, null, null],
     [null, null, null],
@@ -39,7 +35,7 @@ function Board({ gameTurns, onClick, winSquares }) {
                 <button
                   className={styles[indexRow][indexCol]}
                   onClick={() => {
-                    play();
+                    MusicPlayer.play(MusicPlayer.CLICK_SOUND);
                     onClick(indexRow, indexCol);
                   }}
                   disabled={col}
